@@ -12,7 +12,7 @@ builder.Services.AddControllers();
 
 builder.Services.AddHttpClient("RapidClientHttpClient", c =>
 {
-    c.BaseAddress = new Uri(builder.Configuration["RapidApi:BaseAddress"]);  // Retrieved from appsettings.json gitignore applied for security, an improvement will be use of Azure key vault
+    c.BaseAddress = new Uri(builder.Configuration["RapidApi:BaseAddress"]);  // Retrieved from appsettings.json gitignore typically applied for security, an improvement will be use of Azure key vault
     c.DefaultRequestHeaders.Add("Accept", "application/json");
     //Adding basic authentication
     var byteArray = Encoding.ASCII.GetBytes(builder.Configuration["RapidApi:Credentials"]); // Retrieved from appsettings.json 
